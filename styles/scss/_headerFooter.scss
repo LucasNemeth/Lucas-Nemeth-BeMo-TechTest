@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    background: #ecdacba6;
+    justify-content: space-between;
+    align-items: flex-end;
+    h1{
+        padding: 0 60px;
+    }
+    h2{
+        padding: 0 60px;
+    }
+}
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    margin: 0;
+    padding: 3px;
+    background: #ecdacba6;
+    p {
+        margin: 0;
+    }
+}
