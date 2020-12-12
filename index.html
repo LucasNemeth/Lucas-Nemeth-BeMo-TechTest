@@ -20,23 +20,24 @@
                     <h2 class="column__header" id="list-header" v-on:click="createTitle">To Do</h2>
                     <ul class="todo-list">
                         <li class="todo-list__card" v-for="todo in todos" >
-                            <input class="todo-list__input" type='text' v-if = "todo.edit" v-model = "title" placeholder="Enter a title for this card" @blur= "todo.edit = false; $emit('update')"
-                            @keyup.enter = "onEnter">
-                            <div v-else>
-                                <label @click = 'todo.edit = true;'> {{ todo.title }} </label>
-                            </div>
+                            <form @submit.prevent>
+                                <input class="todo-list__input" type='text' v-if = "todo.edit" v-model = "title" placeholder="Enter a title for this card" @blur= "todo.edit = false; $emit('update')" @keyup.enter = "onEnter">
+                                <div v-else>
+                                    <label @click = 'todo.edit = true;'></label>
+                                </div>
+                            </form>
+                            
                          </li>
                     </ul>
                 
-                <span id="addCard" v-on:click="addACard"> + add a card </span>
-            </div>
+                    <span id="addCard" v-on:click="addACard"> + add a card </span>
+                </div>
             <div class="wrapper">
                 <div class="column">
                      <span id="addColumn" v-on:click="addAColumn"> + add another list</span> 
-            </div>
-                
                 </div>
-            <!-- </div> -->
+            </div>
+
             </div>
             
         </section>
@@ -50,3 +51,5 @@
     <script src="main.js"></script>
 </body>
 </html>
+
+<!-- I'm afraid I didn't get what I wanted done. Unfortunately due to me essentially learning PHP, BEM, and Laravel for the first time, and my first project applying Vue outside of theory, it was difficult to get things all going within the 2 day period. What I would've changed to improve this was lean on what I know and improve upon what I am currently learning, create a good, functional Vue project, and figure out how to implement the CMS stuff, as most of these two days were spent essentially studying what I didn't know. -->

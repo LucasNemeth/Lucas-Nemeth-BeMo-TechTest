@@ -9,12 +9,16 @@ new Vue({
     data:{
         userInput:'',
         title:'',
-        editedTodo:null,
-        message:'Does this work?'
     },
     methods:{
-        onEnter(){
-            this.userInput = this.title
+        onEnter(event){
+            //essentially tried it so that on enter, it stores the user input and saves it as the Title, unfortunately, didn't quite work out that way
+            event.preventDefault();
+            this.userInput = this.title;
+            console.log(title);
+            return{
+                userInput
+            }
         },
         editTodo: function(todo){
             this.editedTodo = todo;
@@ -32,6 +36,7 @@ let columnTitle = new Vue ({
 
             if(event){
                 alert(event.target.tagName)
+                //Much like
             }
         }
     }
@@ -49,5 +54,14 @@ let newCard = new Vue({
 })
 
 let newColumn = new Vue({
-    el:'#addColumn'
+    el:'#addColumn',
+    methods:{
+        addAColumn:function(event){
+            if(event){
+                //on click add a new column
+                //when column generates, opens up input to type in columnTitle. 
+                //follow same function as createTitle
+            }
+        }
+    }
 })
